@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
@@ -34,7 +35,7 @@ public class StaffViewReportsActivityEvacuation extends AppCompatActivity {
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
     EditText EvacuationsearchED;
     String sample ;
-
+    TextView MinorTV, SeniorTV,AdultsTV;
 
     Button ButtonSearchBtn;
 
@@ -47,7 +48,9 @@ public class StaffViewReportsActivityEvacuation extends AppCompatActivity {
         EvacuationsearchED = findViewById(R.id.evacuationsearchED);
         ButtonSearchBtn = findViewById(R.id.buttonSearchBtn);
         sample = String.valueOf(EvacuationsearchED);
-
+        MinorTV = findViewById(R.id.minorTV);
+        SeniorTV = findViewById(R.id.seniorTV);
+        AdultsTV = findViewById(R.id.adultsTV);
         ButtonSearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +65,7 @@ public class StaffViewReportsActivityEvacuation extends AppCompatActivity {
 
                                 count = (int) snapshot.getChildrenCount();
                         entries.add(new PieEntry(count,"Minor"));
-
+                            MinorTV.setText(String.valueOf(count));
                         for (int color: ColorTemplate.MATERIAL_COLORS) {
                             colors.add(color);
                         }
@@ -100,7 +103,7 @@ public class StaffViewReportsActivityEvacuation extends AppCompatActivity {
 
                         count = (int) snapshot.getChildrenCount();
                         entries.add(new PieEntry(count,"Adult"));
-
+                        AdultsTV.setText(String.valueOf(count));
                         for (int color: ColorTemplate.MATERIAL_COLORS) {
                             colors.add(color);
                         }
@@ -134,7 +137,7 @@ public class StaffViewReportsActivityEvacuation extends AppCompatActivity {
 
                         count = (int) snapshot.getChildrenCount();
                         entries.add(new PieEntry(count,"Senior Citizen"));
-
+                        SeniorTV.setText(String.valueOf(count));
                         for (int color: ColorTemplate.MATERIAL_COLORS) {
                             colors.add(color);
                         }
@@ -172,7 +175,7 @@ public class StaffViewReportsActivityEvacuation extends AppCompatActivity {
         pieChart.setUsePercentValues(true);
         pieChart.setEntryLabelTextSize(12);
         pieChart.setEntryLabelColor(Color.BLACK);
-        pieChart.setCenterText("Genders");
+        pieChart.setCenterText("Evacuation");
         pieChart.setCenterTextSize(24);
         pieChart.getDescription().setEnabled(false);
 

@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_add_evacuee2.xml" value="0.21784420289855072" />
         <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_home.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports.xml" value="0.24166666666666667" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports_evacuation.xml" value="0.25" />
         <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports_general_reports.xml" value="0.21784420289855072" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports_male_and_female.xml" value="0.17831813576494426" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports_male_and_female.xml" value="0.25" />
         <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staffaddcalamity2.xml" value="0.21784420289855072" />
         <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staffaddevacuation2.xml" value="0.21784420289855072" />
         <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_user_add_post.xml" value="0.21784420289855072" />

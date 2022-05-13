@@ -188,6 +188,11 @@ public class AddPlacesFragmentEvacuee extends Fragment {
             public void onClick(View view) {
                 Places places1 = new Places();
                 //  List<Places> placesList=new ArrayList<>();
+
+
+
+
+
                 places1.setFirstName(firstName.getText().toString());
                 places1.setLastName(lastName.getText().toString());
                 places1.setMiddleName(middleName.getText().toString());
@@ -208,6 +213,7 @@ public class AddPlacesFragmentEvacuee extends Fragment {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                         databaseReference.setValue(places1);
                         Toast.makeText(getActivity(), "Dara Added Successfully", Toast.LENGTH_SHORT).show();
                         firstName.setText("");

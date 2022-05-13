@@ -149,6 +149,8 @@ public class AddPlacesFragment extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Places places=new Places();
                 //  List<Places> placesList=new ArrayList<>();
                 places.setEvacuationName(evacuationName.getText().toString());

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
@@ -34,9 +35,9 @@ public class StaffViewReportsActivityMaleAndFemale extends AppCompatActivity {
 
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
    EditText EvacuationsearchED;
-           String sample ;
+   String sample ;
    Button ButtonSearchBtn;
-
+   TextView MaleTV, FemaleTV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +48,8 @@ public class StaffViewReportsActivityMaleAndFemale extends AppCompatActivity {
         EvacuationsearchED = findViewById(R.id.evacuationsearchED);
         ButtonSearchBtn = findViewById(R.id.buttonSearchBtn);
         sample = String.valueOf(EvacuationsearchED);
-
+        MaleTV = findViewById(R.id.maleTV);
+        FemaleTV = findViewById(R.id.femaleTV);
         ButtonSearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +64,7 @@ public class StaffViewReportsActivityMaleAndFemale extends AppCompatActivity {
 
                         count = (int) snapshot.getChildrenCount();
                         entries.add(new PieEntry(count,"Male"));
-
+                        MaleTV.setText(String.valueOf(count));
                         for (int color: ColorTemplate.MATERIAL_COLORS) {
                             colors.add(color);
                         }
@@ -107,7 +109,7 @@ public class StaffViewReportsActivityMaleAndFemale extends AppCompatActivity {
 
                         count = (int) snapshot.getChildrenCount();
                         entries.add(new PieEntry(count,"Female"));
-
+                        FemaleTV.setText(String.valueOf(count));
                         for (int color: ColorTemplate.MATERIAL_COLORS) {
                             colors.add(color);
                         }

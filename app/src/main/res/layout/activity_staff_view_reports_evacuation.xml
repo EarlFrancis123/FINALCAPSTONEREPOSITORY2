@@ -39,6 +39,7 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_marginTop="120dp"
+      android:layout_marginBottom="70dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintLeft_toLeftOf="parent"
@@ -56,5 +57,77 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@+id/textInputLO"
       app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/textView14"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Minor = "
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.044"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart"
+      app:layout_constraintVertical_bias="0.274" />
+
+  <TextView
+      android:id="@+id/minorTV"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="No Data"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toEndOf="@+id/textView14"
+      app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart"
+      app:layout_constraintVertical_bias="0.274" />
+
+  <TextView
+      android:id="@+id/textView17"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Adults = "
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.641"
+      app:layout_constraintStart_toEndOf="@+id/minorTV"
+      app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart"
+      app:layout_constraintVertical_bias="0.313" />
+
+  <TextView
+      android:id="@+id/adultsTV"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="No Data"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toEndOf="@+id/textView17"
+      app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart"
+      app:layout_constraintVertical_bias="0.313" />
+
+  <TextView
+      android:id="@+id/textView19"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Senior Citizen = "
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.051"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart"
+      app:layout_constraintVertical_bias="0.686" />
+
+  <TextView
+      android:id="@+id/seniorTV"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="No Data"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toEndOf="@+id/textView19"
+      app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart"
+      app:layout_constraintVertical_bias="0.686" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

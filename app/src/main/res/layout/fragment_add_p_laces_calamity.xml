@@ -13,7 +13,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
 
         android:gravity="center"
@@ -23,8 +23,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="351dp"
-        android:layout_height="222dp"
+        android:layout_width="320dp"
+        android:layout_height="300dp"
         android:layout_marginTop="30dp"
         android:background="@color/white">
 
@@ -48,7 +48,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edCalamityName"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp" />
+                    android:layout_height="50dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -68,7 +68,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edCalamityDetails"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp" />
+                    android:layout_height="50dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -102,7 +102,7 @@
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="match_parent"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="Save" />

@@ -3,16 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_add_calamity.xml" value="0.34270833333333334" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_calamity_avtivity.xml" value="0.34270833333333334" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_evacuation.xml" value="0.34270833333333334" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports.xml" value="0.18802083333333333" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports_evacuation.xml" value="0.18802083333333333" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_add_evacuee2.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_home.xml" value="0.21784420289855072" />
         <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports_general_reports.xml" value="0.21784420289855072" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports_male_and_female.xml" value="0.25" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_user_search_evacuee.xml" value="0.34270833333333334" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/fragment_add_places_nearest_evacuation.xml" value="0.18802083333333333" />
-        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/fragment_staff_add_evacuee_activity2.xml" value="0.18802083333333333" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staff_view_reports_male_and_female.xml" value="0.17831813576494426" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staffaddcalamity2.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_staffaddevacuation2.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_user_add_post.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_user_home.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_user_nearest_evacuation2.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_user_rescue.xml" value="0.11752786220871327" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/activity_user_search_evacuee.xml" value="0.11752786220871327" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/fragment_add_p_laces_calamity.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/fragment_add_places.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/fragment_add_places_evacuee.xml" value="0.33" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/fragment_add_places_nearest_evacuation.xml" value="0.21784420289855072" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/fragment_staff_add_evacuee_activity2.xml" value="0.18854166666666666" />
+        <entry key="..\:/Capstone/FinalCapstoneProject-master/app/src/main/res/layout/list_item.xml" value="0.2682291666666667" />
         <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/activity_maps_getlatlong.xml" value="0.18072916666666666" />
         <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/activity_staff_add_calamity.xml" value="0.358695652173913" />
         <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/activity_staff_add_evacuee2.xml" value="0.358695652173913" />

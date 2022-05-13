@@ -2,9 +2,18 @@ package com.evacuationapp.finalevacuationapp;
 
 public class Places {
     String streetAddress,state,country,image,evacuationName,evacuationNumber,evacuationCalamityType,evacuationBarangay,calamityName,calamityDetails;
-    String firstName, lastName, middleName, contactInfo,gender,age,address,barangay,headOfFamily;
+    String firstName, lastName, middleName, contactInfo,gender,address,barangay,headOfFamily;
+    String age,ageautocomplete;
     double latitude,longitude;
     int totalevacuation;
+
+    public String getAgeautocomplete() {
+        return ageautocomplete;
+    }
+
+    public void setAgeautocomplete(String ageautocomplete) {
+        this.ageautocomplete = ageautocomplete;
+    }
 
     public int getTotalevacuation() {
         return totalevacuation;
@@ -54,12 +63,9 @@ public class Places {
         this.gender = gender;
     }
 
+
     public String getAge() {
         return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
     }
 
     public String getAddress() {
@@ -181,5 +187,9 @@ public class Places {
 
     public void setEvacuationBarangay(String evacuationBarangay) {
         this.evacuationBarangay = evacuationBarangay;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 }

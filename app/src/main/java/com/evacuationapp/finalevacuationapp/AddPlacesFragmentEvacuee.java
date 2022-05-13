@@ -3,6 +3,7 @@ package com.evacuationapp.finalevacuationapp;
 import static android.app.Activity.RESULT_OK;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,6 +24,9 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -95,9 +99,17 @@ public class AddPlacesFragmentEvacuee extends Fragment {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference2;
     FirebaseDatabase firebaseDatabase2;
-    EditText firstName, lastName, middleName, contactInfo,gender,age,address,barangay,headOfFamily,evacuationName,edStreetAddress,edState,edCountry;
+    EditText firstName, lastName, middleName, contactInfo,age,address,barangay,headOfFamily,evacuationName,edStreetAddress,edState;
     Button btnSave;
     ImageView imgPlace;
+    String[] items =  {"Male","Fe Male"};
+    String[] items2 =  {"Minor","Adult","Senior Citizen"};
+    String[] items3 =  {"Philippines"};
+    AutoCompleteTextView gender,ageautocomplete,edCountry;
+    ArrayAdapter<String> adapterItems;
+    ArrayAdapter<String> adapterItems2;
+    ArrayAdapter<String> adapterItems3;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -109,18 +121,45 @@ public class AddPlacesFragmentEvacuee extends Fragment {
         lastName = v.findViewById(R.id.edEvacueeLastName);
         middleName = v.findViewById(R.id.edEvacueeMiddleName);
         contactInfo = v.findViewById(R.id.edEvacueeContactNumber);
-        gender = v.findViewById(R.id.edEvacueeGender);
+
         age = v.findViewById(R.id.edEvacueeAge);
         edStreetAddress = v.findViewById(R.id.edStreet);
         edState = v.findViewById(R.id.edState);
-        edCountry = v.findViewById(R.id.edCountry);
+        edCountry = v.findViewById(R.id.auto_complete_txt_country);
         barangay = v.findViewById(R.id.edEvacueeBarangay);
         headOfFamily = v.findViewById(R.id.edEvacueeHeadOfFamily);
         evacuationName = v.findViewById(R.id.edEvacueeEvacuation);
         firebaseDatabase2 = FirebaseDatabase.getInstance();
-
         btnSave = v.findViewById(R.id.btnSave);
         imgPlace = v.findViewById(R.id.imgPlace);
+        gender = v.findViewById(R.id.auto_complete_txt_gender);
+        ageautocomplete= v.findViewById(R.id.auto_complete_txt_age);
+
+        adapterItems = new ArrayAdapter<String>(getContext().getApplicationContext(),R.layout.list_item,items);
+        adapterItems2 = new ArrayAdapter<String>(getContext().getApplicationContext(),R.layout.list_item,items2);
+        adapterItems3 = new ArrayAdapter<String>(getContext().getApplicationContext(),R.layout.list_item,items3);
+        gender.setAdapter(adapterItems);
+        ageautocomplete.setAdapter(adapterItems2);
+        edCountry.setAdapter(adapterItems3);
+        gender.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+            }
+        });
+        ageautocomplete.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+            }
+        });
+        edCountry.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+            }
+        });
+
 
         ActivityCompat.requestPermissions(
                 getActivity(), new String[]{
@@ -155,6 +194,7 @@ public class AddPlacesFragmentEvacuee extends Fragment {
                 places1.setContactInfo(contactInfo.getText().toString());
                 places1.setGender(gender.getText().toString());
                 places1.setAge(age.getText().toString());
+                places1.setAgeautocomplete(ageautocomplete.getText().toString());
                 places1.setStreetAddress(edStreetAddress.getText().toString());
                 places1.setState(edState.getText().toString());
                 places1.setCountry(edCountry.getText().toString());
@@ -176,6 +216,7 @@ public class AddPlacesFragmentEvacuee extends Fragment {
                         contactInfo.setText("");
                         gender.setText("");
                         age.setText("");
+                        ageautocomplete.setText("");
                         edStreetAddress.setText("");
                         edState.setText("");
                         edCountry.setText("");
@@ -210,6 +251,7 @@ public class AddPlacesFragmentEvacuee extends Fragment {
                         contactInfo.setText("");
                         gender.setText("");
                         age.setText("");
+                        ageautocomplete.setText("");
                         edStreetAddress.setText("");
                         edState.setText("");
                         edCountry.setText("");

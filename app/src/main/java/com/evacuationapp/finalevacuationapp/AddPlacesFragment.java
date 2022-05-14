@@ -101,8 +101,9 @@ public class AddPlacesFragment extends Fragment {
 
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
-    EditText edStreetAddress, edState, edCountry,evacuationName,evacuationNumber,evacuationCalamityType,evacuationBarangay;
+    EditText edStreetAddress, edState,evacuationName,evacuationNumber,evacuationCalamityType,evacuationBarangay;
     Button btnSave;
+    String edCountry;
     ImageView imgPlace;
 
     @Override
@@ -115,7 +116,7 @@ public class AddPlacesFragment extends Fragment {
         firebaseDatabase = FirebaseDatabase.getInstance();
         edStreetAddress = v.findViewById(R.id.edStreet);
         edState = v.findViewById(R.id.edState);
-        edCountry = v.findViewById(R.id.edCountry);
+        edCountry = "Philippines";
         btnSave = v.findViewById(R.id.btnSave);
         imgPlace = v.findViewById(R.id.imgPlace);
         evacuationName = v.findViewById(R.id.edEvacuationName);
@@ -159,7 +160,7 @@ public class AddPlacesFragment extends Fragment {
                 places.setEvacuationCalamityType(evacuationCalamityType.getText().toString());
                 places.setStreetAddress(edStreetAddress.getText().toString());
                 places.setState(edState.getText().toString());
-                places.setCountry(edCountry.getText().toString());
+                places.setCountry(edCountry);
                 places.setImage(encodeImage);
                 places.setLatitude(getLatLongFromAddress(requireContext(), places.getStreetAddress() + "," +
                         places.getState() + "," +
@@ -175,7 +176,7 @@ public class AddPlacesFragment extends Fragment {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         databaseReference.setValue(places);
                         Toast.makeText(getActivity(), "Evacuation Added Successfully", Toast.LENGTH_SHORT).show();
-                        edCountry.setText("");
+                        edCountry = String.valueOf(edCountry);
                         edState.setText("");
                         edStreetAddress.setText("");
                         evacuationName.setText("");

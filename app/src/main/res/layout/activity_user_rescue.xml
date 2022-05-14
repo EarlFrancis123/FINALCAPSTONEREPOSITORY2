@@ -55,6 +55,7 @@
         android:fontFamily="serif"
         android:text="Need a Rescue?"
         android:textColor="#000000"
+        android:layout_marginBottom="30dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,6 +91,23 @@
         app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
         app:layout_constraintVertical_bias="0.025" />
 
+
+
+    <Button
+        android:id="@+id/rescueBtn"
+        android:layout_width="168dp"
+        android:layout_height="164dp"
+        android:background="@drawable/roundbtn2"
+        android:text="HELP!"
+        android:textSize="24sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeofCalamity3"
+        app:layout_constraintVertical_bias="0.0" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigator"
         android:layout_width="360dp"
@@ -109,36 +127,5 @@
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/user_menu"
         tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="168dp"
-        android:layout_height="164dp"
-        android:background="@drawable/roundbtn2"
-        android:text="RESCUE"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/typeofCalamity3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginBottom="67dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/typeofCalamity3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="1.0" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

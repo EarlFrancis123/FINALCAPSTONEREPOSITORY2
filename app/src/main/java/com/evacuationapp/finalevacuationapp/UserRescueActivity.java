@@ -3,6 +3,7 @@ package com.evacuationapp.finalevacuationapp;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -25,39 +26,104 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
+import com.google.protobuf.StringValue;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserRescueActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private FirebaseAuth firebaseAuth;
     private Toolbar mainToolbar;
     private FirebaseFirestore firestore;
+    EditText etPhone,etMessage;
+    Button RescueBtn;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-    TextView count1;
+
+    String NotificationMessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_rescue);
-
-
+        RescueBtn = findViewById(R.id.rescueBtn);
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
         mainToolbar = findViewById(R.id.main_toolbar);
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.rescue);
-        count1 = findViewById(R.id.textView10);
-        Query countQuery = databaseReference.child("evacuation");
-        countQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+
+        RescueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int questionCount = (int) snapshot.getChildrenCount();
-                count1.setText(""+questionCount);
+
+            public void onClick(View view) {
+                Query countQuery2 = databaseReference.child("evacuation");
+                countQuery2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
+                            String value = String.valueOf(dataSnapshot1.child("evacuationNumber"));
+
+
+                            NotificationMessage= ("Need Urget Help!!!!!!!!!"+"/n"+ "My Location = ako pani e butang nga automatic kuha sa location so ILOVEYOU LOVELEY SA DIRI" );
+
+
+                            if(!value.equals("") && !NotificationMessage.equals("")){
+                                SmsManager smsManager = SmsManager.getDefault();
+                                smsManager.sendTextMessage(value, null, NotificationMessage, null, null);
+
+                                Toast.makeText(getApplicationContext()
+                                        , "SMS sent successfully!", Toast.LENGTH_LONG).show();
+
+                            }else{
+                                Toast.makeText(getApplicationContext()
+                                        ,"Enter value First.",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
+        });
+
+      /* btSend.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onClick(View view) {
+                if(ContextCompat.checkSelfPermission(UserRescueActivity.this
+                        , Manifest.permission.SEND_SMS)
+                        == PackageManager.PERMISSION_GRANTED){
+
+                    sendMessage();
+                }else{
+                    ActivityCompat.requestPermissions(UserRescueActivity.this
+                            , new String[]{Manifest.permission.SEND_SMS}
+                            ,100);
+                }
 
             }
         });
+*/
+
+
 
                 bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -90,6 +156,21 @@ public class UserRescueActivity extends AppCompatActivity {
     }
 
 
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if(requestCode == 100 && grantResults.length > 0 && grantResults[0]
+                == PackageManager.PERMISSION_GRANTED){
+
+
+        }else{
+            Toast.makeText(getApplicationContext()
+                    ,"Permission Denied!",Toast.LENGTH_SHORT).show();
+        }
+    }
     @Override
     protected void onStart() {
         super.onStart();
@@ -101,7 +182,7 @@ public class UserRescueActivity extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu , menu);
+        getMenuInflater().inflate(R.menu.main_menu2 , menu);
         return true;
     }
 

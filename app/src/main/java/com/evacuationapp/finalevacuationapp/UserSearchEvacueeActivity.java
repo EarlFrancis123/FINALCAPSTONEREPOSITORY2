@@ -144,4 +144,5 @@ public class UserSearchEvacueeActivity extends AppCompatActivity {
         recview.setAdapter(adapter);
 
     }
+
 }

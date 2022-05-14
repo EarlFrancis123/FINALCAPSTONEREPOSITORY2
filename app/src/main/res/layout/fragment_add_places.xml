@@ -58,7 +58,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:hint="Evacuation Contact Number"
+                android:hint="Contact Number"
 
                 app:startIconDrawable="@drawable/ic_baseline_center_number">
 
@@ -130,26 +130,6 @@
                     android:layout_height="50dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/evacueeAgeLO"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:hint="Country"
-                android:inputType="number"
-                app:startIconDrawable="@drawable/ic_baseline_center_address"
-
-                >
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edCountry"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/evacueeStreetLO"

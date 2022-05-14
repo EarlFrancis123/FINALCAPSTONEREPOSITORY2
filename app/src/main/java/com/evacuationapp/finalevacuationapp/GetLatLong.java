@@ -102,7 +102,7 @@ public class GetLatLong extends AppCompatActivity {
                 longitude=String.valueOf(longi);
 
 
-                showLocationTxt.setText(latitude+", "+longitude);
+                showLocationTxt.setText("Location Already Get");
                 lt.setLatitude(lat);
                 lt.setLongitude(longi);
             }
@@ -114,7 +114,7 @@ public class GetLatLong extends AppCompatActivity {
                 latitude=String.valueOf(lat);
                 longitude=String.valueOf(longi);
 
-                showLocationTxt.setText(latitude+", "+longitude);
+                showLocationTxt.setText("Location Already Get");
                 lt.setLatitude(lat);
                 lt.setLongitude(longi);
             }
@@ -126,7 +126,7 @@ public class GetLatLong extends AppCompatActivity {
                 latitude=String.valueOf(lat);
                 longitude=String.valueOf(longi);
 
-                showLocationTxt.setText(latitude+", "+longitude);
+                showLocationTxt.setText("Location Already Get");
                 lt.setLatitude(lat);
                 lt.setLongitude(longi);
             }

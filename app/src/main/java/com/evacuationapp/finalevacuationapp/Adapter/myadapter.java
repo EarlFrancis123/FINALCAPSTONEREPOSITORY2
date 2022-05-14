@@ -24,13 +24,10 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
 
     @Override
     protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final model model) {
-        holder.name.setText("Name: "+model.getFirstName() + " "+ model.getLastName());
-        holder.middleName.setText("Middle Name: "+model.getMiddleName());
+        holder.name.setText("Name: "+model.getFirstName() + ", "+ model.getMiddleName()+" "+model.getLastName());
         holder.contactNum.setText("Contact Number: "+model.getContactInfo());
         holder.address.setText("Address: "+model.getStreetAddress()+", "+model.getState()+",");
-        holder.country.setText("                 "+model.getCountry());
         holder.gender.setText("Gender: "+model.getGender());
-        holder.headFamily.setText("Head of Family: "+model.getHeadOfFamily());
         holder.evacuation.setText("Evacuation: "+model.getEvacuationName());
 
     }
@@ -52,12 +49,9 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
             super(itemView);
 
             name=(TextView)itemView.findViewById(R.id.nameTV);
-            middleName =(TextView)itemView.findViewById(R.id.middleTV);
             contactNum=(TextView)itemView.findViewById(R.id.contactTV);
             address=(TextView)itemView.findViewById(R.id.addressTV);
-            country=(TextView)itemView.findViewById(R.id.countryTV);
             gender=(TextView)itemView.findViewById(R.id.genderTV);
-            headFamily=(TextView)itemView.findViewById(R.id.headTV);
             evacuation=(TextView)itemView.findViewById(R.id.evacuationTV);
 
 

@@ -91,8 +91,13 @@ public class StaffAddEvacueeActivity2 extends AppCompatActivity {
             startActivity(new Intent(StaffAddEvacueeActivity2.this , SetUpActivity.class));
         }else if(item.getItemId() == R.id.sign_out_menu){
             firebaseAuth.signOut();
-            startActivity(new Intent(StaffAddEvacueeActivity2.this , SignInActivity.class));
-            finish();
+            startActivity(new Intent(StaffAddEvacueeActivity2.this , SignInActivity.class));finish();
+        }
+        else if(item.getItemId() == R.id.reports_menu){
+            startActivity(new Intent(StaffAddEvacueeActivity2.this , StaffViewReportsActivity.class));
+        }
+        else if(item.getItemId() == R.id.notify_menu){
+            startActivity(new Intent(StaffAddEvacueeActivity2.this , StaffNotifyAllEvacueeActivity.class));
         }
         return true;
     }

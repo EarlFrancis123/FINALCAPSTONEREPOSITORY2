@@ -191,6 +191,9 @@ public class StaffHomeActivity extends AppCompatActivity {
         else if(item.getItemId() == R.id.reports_menu){
             startActivity(new Intent(StaffHomeActivity.this , StaffViewReportsActivity.class));
         }
+        else if(item.getItemId() == R.id.notify_menu){
+            startActivity(new Intent(StaffHomeActivity.this , StaffNotifyAllEvacueeActivity.class));
+        }
         return true;
     }
 }
